@@ -2,10 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
+// eslint-disable-next-line
+// @ts-ignore
 const NameRotator = ({ action }) => {
   const [athlete, setAthlete] = useState({
     name: "",
   });
+  // eslint-disable-next-line
+  // @ts-ignore
   const intervalRef = useRef<Timeout>();
 
   useEffect(() => {
