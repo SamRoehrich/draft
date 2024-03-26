@@ -1,5 +1,4 @@
 import NameRotator from "@/components/name-rotator";
-
 import { getRandomAthlete } from "@/lib/actions/get-random-athlete";
 
 export default function Home() {
