@@ -1,7 +1,7 @@
 import NameRotator from "@/components/name-rotator";
 import { getRandomAthlete } from "@/lib/actions/get-random-athlete";
 
-export default async function Home() {
+export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div>

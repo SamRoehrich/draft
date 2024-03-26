@@ -1,13 +1,13 @@
 "use client";
 
-import { signOutAndClearCookie } from "@/lib/actions/sign-out";
+import { clearAuthCokies } from "@/lib/actions/clear-auth-cookies";
 import { signOut } from "next-auth/react";
 
 export default function SignOutButton() {
   return (
     <button
       onClick={async () => {
-        await signOutAndClearCookie();
+        await clearAuthCokies();
         signOut();
       }}
     >
