@@ -1,10 +1,9 @@
 "use server";
-
 import { sql } from "@vercel/postgres";
 import { cookies } from "next/headers";
 import { UID } from "../types/user";
 import { TeamType } from "../types/team";
-import { Positions } from "../types/athletes";
+import { Gender, Positions } from "../types/athletes";
 import { redirect } from "next/navigation";
 
 export const handleCreateTeam = async (
@@ -14,12 +13,12 @@ export const handleCreateTeam = async (
 ) => {
   const teamName = formData.get("teamName")?.toString();
   const categories = ["Male", "Female"];
-  const athletes = { male: {}, female: {} };
+  const athletes: Record<Gender, any> = { male: {}, female: {} };
 
   categories.forEach((category) => {
     positions.forEach((position) => {
       const key = `${position}${category}Athlete`; // Construct the key (e.g., firstMaleAthlete)
-      athletes[category.toLowerCase()][position] = formData
+      athletes[category.toLowerCase() as Gender][position] = formData
         .get(key)
         ?.toString();
     });
