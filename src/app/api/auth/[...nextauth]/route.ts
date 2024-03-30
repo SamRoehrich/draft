@@ -5,6 +5,8 @@ import Strava from "next-auth/providers/strava";
 import { cookies } from "next/headers";
 import { kv } from "@vercel/kv";
 
+import type { UID } from "@/lib/types/user";
+
 const authOptions = {
   providers: [
     Github({
@@ -36,7 +38,7 @@ const authOptions = {
           provider: account.provider,
           name: user.name,
           id: uid,
-        };
+        } satisfies UID;
         kv.hset(uid, uidObj);
       }
 
