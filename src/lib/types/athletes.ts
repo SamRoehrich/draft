@@ -6,3 +6,5 @@ export type Athlete = {
   gender: Gender;
   perviousSeasonRanking: number;
 };
+
+export type Positions = "first" | "second" | "third" | "fourth" | "fifth";
