@@ -21,5 +21,5 @@ CREATE TABLE IF NOT EXISTS "all_star_team" (
     constraint fk_fourth_male_all_star foreign key (fourth_male) references athletes(id),
     constraint fk_fourth_female_all_star foreign key (fourth_female) references athletes(id),
     constraint fk_fifth_male_all_star foreign key (fifth_male) references athletes(id),
-    constraint fk_fifth_female_all_star foreign key (fifth_female) references athletes(id),
+    constraint fk_fifth_female_all_star foreign key (fifth_female) references athletes(id)
 )
