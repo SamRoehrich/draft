@@ -10,9 +10,5 @@ export default function TeamsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <div>
-      <div>{children}</div>
-    </div>
-  );
+  return <> {children} </>;
 }
